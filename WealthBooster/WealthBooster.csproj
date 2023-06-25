@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0EF4A3EE-FDC3-4486-9B2C-12E480943B96}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WealthBooster</RootNamespace>
+    <AssemblyName>WealthBooster</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Memory\memory.cs" />
+    <Compile Include="Memory\Methods\AoB.cs" />
+    <Compile Include="Memory\Methods\Read.cs" />
+    <Compile Include="Memory\Methods\Write.cs" />
+    <Compile Include="Memory\Structures\Imports.cs" />
+    <Compile Include="Memory\Structures\MemoryRegionResult.cs" />
+    <Compile Include="Memory\Structures\Process.cs" />
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuStuff\Bools.cs" />
+    <Compile Include="MenuStuff\CheckboxColorChanger.cs" />
+    <Compile Include="MenuStuff\ControlExtensions.cs" />
+    <Compile Include="MenuStuff\Freezer.cs" />
+    <Compile Include="MenuStuff\GetAddress.cs" />
+    <Compile Include="MenuStuff\LicensePlateTextClass.cs" />
+    <Compile Include="MenuStuff\Offsets\AiHandling.cs" />
+    <Compile Include="MenuStuff\Offsets\Globals.cs" />
+    <Compile Include="MenuStuff\Offsets\Player.cs" />
+    <Compile Include="MenuStuff\Offsets\Roulette.cs" />
+    <Compile Include="MenuStuff\Offsets\Vehicle.cs" />
+    <Compile Include="MenuStuff\Offsets\Weapon.cs" />
+    <Compile Include="MenuStuff\SigScan.cs" />
+    <Compile Include="MenuStuff\Tasks.cs" />
+    <Compile Include="MenuStuff\TimerManager.cs" />
+    <Compile Include="MoneyMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoneyMenu.Designer.cs">
+      <DependentUpon>MoneyMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Overlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Overlay.Designer.cs">
+      <DependentUpon>Overlay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerMenu.Designer.cs">
+      <DependentUpon>PlayerMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeleportMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeleportMenu.Designer.cs">
+      <DependentUpon>TeleportMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleMenu.Designer.cs">
+      <DependentUpon>VehicleMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WeaponMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WeaponMenu.Designer.cs">
+      <DependentUpon>WeaponMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorldMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorldMenu.Designer.cs">
+      <DependentUpon>WorldMenu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoneyMenu.resx">
+      <DependentUpon>MoneyMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Overlay.resx">
+      <DependentUpon>Overlay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerMenu.resx">
+      <DependentUpon>PlayerMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TeleportMenu.resx">
+      <DependentUpon>TeleportMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleMenu.resx">
+      <DependentUpon>VehicleMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeaponMenu.resx">
+      <DependentUpon>WeaponMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorldMenu.resx">
+      <DependentUpon>WorldMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
